@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lBT-jF-sta">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--NYT-Bestseller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="NYT-Bestseller" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="ios_nyt_bestseller_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fOE-wK-zY4"/>
+                        <viewControllerLayoutGuide type="bottom" id="cDP-Vh-iII"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NAv-v4-nJU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ah5-JF-re5">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </tableView>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NAv-v4-nJU" firstAttribute="bottom" secondItem="cDP-Vh-iII" secondAttribute="top" id="4f7-r1-P44"/>
+                            <constraint firstItem="NAv-v4-nJU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JCL-e1-dxw"/>
+                            <constraint firstItem="NAv-v4-nJU" firstAttribute="top" secondItem="fOE-wK-zY4" secondAttribute="bottom" id="hoU-q0-9Fn"/>
+                            <constraint firstAttribute="trailing" secondItem="NAv-v4-nJU" secondAttribute="trailing" id="ult-zP-iex"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="NYT-Bestseller" id="OOZ-cZ-mOc"/>
+                    <connections>
+                        <outlet property="tableView" destination="NAv-v4-nJU" id="An4-JJ-Y9n"/>
+                        <segue destination="FiQ-6w-RCb" kind="show" identifier="segueToDetailView" id="IqB-1e-g2b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="573.60000000000002" y="163.26836581709148"/>
+        </scene>
+        <!--DetailViewController-->
+        <scene sceneID="NNF-46-ZW1">
+            <objects>
+                <viewController title="DetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="FiQ-6w-RCb" customClass="DetailViewController" customModule="ios_nyt_bestseller_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iRm-7y-dlJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="PMa-uA-CHj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gNF-tK-QLX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5n-ce-3FZ">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="g5n-ce-3FZ" firstAttribute="top" secondItem="iRm-7y-dlJ" secondAttribute="bottom" constant="6" id="J6z-B4-cxt"/>
+                            <constraint firstAttribute="trailing" secondItem="g5n-ce-3FZ" secondAttribute="trailing" id="TpM-dr-6j2"/>
+                            <constraint firstItem="g5n-ce-3FZ" firstAttribute="bottom" secondItem="PMa-uA-CHj" secondAttribute="top" id="YLy-zJ-XXp"/>
+                            <constraint firstItem="g5n-ce-3FZ" firstAttribute="leading" secondItem="gNF-tK-QLX" secondAttribute="leading" id="mvD-zL-cii"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webview" destination="g5n-ce-3FZ" id="qi0-qL-X0v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c8X-Ug-twZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1264.8" y="162.3688155922039"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nrY-zr-erm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lBT-jF-sta" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N3h-zc-Jzb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NSX-1T-len"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ulc-Nc-5fV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-177" y="164"/>
+        </scene>
+    </scenes>
+</document>
